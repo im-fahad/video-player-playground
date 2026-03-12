@@ -1,0 +1,16 @@
+{
+  "name": "react-video-player-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"pnpm --filter react-video-player build:watch\" \"pnpm --filter playground dev\"",
+    "build:pkg": "pnpm --filter react-video-player build",
+    "publish:pkg": "pnpm --filter react-video-player publish --access public"
+  },
+  "devDependencies": {
+    "clsx": "^2.1.1",
+    "concurrently": "^9.2.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "prettier": "^3.8.1"
+  }
+}

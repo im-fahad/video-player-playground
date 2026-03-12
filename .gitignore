@@ -1,0 +1,84 @@
+# -----------------------------
+# Dependencies
+# -----------------------------
+node_modules
+.pnpm-store
+
+# -----------------------------
+# Build outputs
+# -----------------------------
+dist
+build
+lib
+coverage
+.esbuild
+*.tsbuildinfo
+
+# Workspace builds
+packages/*/dist
+packages/*/build
+apps/*/dist
+apps/*/build
+
+# Framework builds
+.next
+out
+.vite
+.cache
+.parcel-cache
+
+# -----------------------------
+# Logs
+# -----------------------------
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# -----------------------------
+# Environment variables
+# -----------------------------
+.env
+.env.local
+.env.*.local
+
+# -----------------------------
+# Testing
+# -----------------------------
+coverage
+.nyc_output
+jest-cache
+
+# -----------------------------
+# OS files
+# -----------------------------
+.DS_Store
+Thumbs.db
+
+# -----------------------------
+# JetBrains / WebStorm
+# -----------------------------
+.idea
+*.iml
+
+# -----------------------------
+# VSCode (optional)
+# -----------------------------
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# -----------------------------
+# Temporary files
+# -----------------------------
+tmp
+temp
+*.tmp
+*.local
+
+# -----------------------------
+# Storybook
+# -----------------------------
+storybook-static
