@@ -1,6 +1,6 @@
 import React from "react";
-import { ReactVideoPlayer } from "react-video-player";
-import "react-video-player/style.css";
+import { ReactVideoPlayer } from "@glitchlab/react-video-player";
+import "@glitchlab/react-video-player/style.css";
 
 export default function App() {
   return (

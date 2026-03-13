@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "react-video-player": "workspace:*",
+    "@glitchlab/react-video-player": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

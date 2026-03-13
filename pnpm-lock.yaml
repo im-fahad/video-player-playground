@@ -24,36 +24,11 @@ importers:
         specifier: ^3.8.1
         version: 3.8.1
 
-  apps/playground:
-    dependencies:
-      react:
-        specifier: ^18.2.0
-        version: 18.3.1
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.3.1(react@18.3.1)
-      react-video-player:
-        specifier: workspace:*
-        version: link:../../packages/react-video-player
-    devDependencies:
-      '@types/react':
-        specifier: ^18
-        version: 18.3.28
-      '@types/react-dom':
-        specifier: ^18
-        version: 18.3.7(@types/react@18.3.28)
-      '@vitejs/plugin-react':
-        specifier: ^4
-        version: 4.7.0(vite@5.4.21(lightningcss@1.31.1))
-      typescript:
-        specifier: ^5
-        version: 5.9.3
-      vite:
-        specifier: ^5
-        version: 5.4.21(lightningcss@1.31.1)
-
   packages/react-video-player:
     dependencies:
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       hls.js:
         specifier: ^1.5.0
         version: 1.6.15
@@ -88,9 +63,6 @@ importers:
       autoprefixer:
         specifier: ^10.4.27
         version: 10.4.27(postcss@8.5.8)
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
       eslint:
         specifier: ^10.0.2
         version: 10.0.2(jiti@2.6.1)
@@ -124,6 +96,34 @@ importers:
       vite-plugin-dts:
         specifier: ^3
         version: 3.9.1(rollup@4.59.0)(typescript@5.9.3)(vite@5.4.21(lightningcss@1.31.1))
+
+  playground/react:
+    dependencies:
+      '@glitchlab/react-video-player':
+        specifier: workspace:*
+        version: link:../../packages/react-video-player
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@types/react':
+        specifier: ^18
+        version: 18.3.28
+      '@types/react-dom':
+        specifier: ^18
+        version: 18.3.7(@types/react@18.3.28)
+      '@vitejs/plugin-react':
+        specifier: ^4
+        version: 4.7.0(vite@5.4.21(lightningcss@1.31.1))
+      typescript:
+        specifier: ^5
+        version: 5.9.3
+      vite:
+        specifier: ^5
+        version: 5.4.21(lightningcss@1.31.1)
 
 packages:
 
