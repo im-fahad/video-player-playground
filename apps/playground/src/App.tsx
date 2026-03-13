@@ -1,5 +1,5 @@
 import React from "react";
-import { VideoPlayerWrapper } from "react-video-player";
+import { ReactVideoPlayer } from "react-video-player";
 import "react-video-player/style.css";
 
 export default function App() {
@@ -8,7 +8,7 @@ export default function App() {
       <h2>react-video-player playground</h2>
 
       <div className="min-h-screen bg-neutral-950 p-8">
-        <VideoPlayerWrapper
+        <ReactVideoPlayer
           // src="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
           src="http://index1.circleftp.net/FILE/Hindi%20Movies/2026/Assi%20%282026%29%201080p%20HDTC%20Hindi%20x264/Assi%20%282026%29%201080p%20HDTC%20Hindi%20x264.mkv"
           poster="https://ik.imagekit.io/ikmedia/blog/ghost/content/images/2024/03/Nextjs-Video-Player.png"
