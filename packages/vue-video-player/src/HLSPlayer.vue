@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Hls from "hls.js";
-import { ref, watch, onUnmounted } from "vue";
+import { onMounted, onUnmounted, ref, watch } from "vue";
 import type { HlsConfig } from "hls.js";
 
 const props = withDefaults(
@@ -21,7 +21,7 @@ const props = withDefaults(
     loop: false,
     controls: false,
     playsInline: true,
-    preload: "metadata",
+    preload: "metadata"
   }
 );
 
@@ -33,7 +33,7 @@ const emit = defineEmits<{
 const videoEl = ref<HTMLVideoElement | null>(null);
 const hlsInstance = ref<Hls | null>(null);
 
-const canUseHlsJs = typeof window !== "undefined" && Hls.isSupported();
+const canUseHlsJs = globalThis.window !== undefined && Hls.isSupported();
 const shouldUseHls = (src: string) =>
   Boolean(props.isHls) || (canUseHlsJs && src.endsWith(".m3u8"));
 
@@ -46,7 +46,7 @@ function cleanup() {
   if (!el) return;
   el.pause();
   el.removeAttribute("src");
-  while (el.firstChild) el.removeChild(el.firstChild);
+  while (el.firstChild) el.firstChild.remove();
   el.load();
 }
 
@@ -73,17 +73,19 @@ function initPlayer(src: string) {
   }
 }
 
+onMounted(() => {
+  if (props.src) initPlayer(props.src);
+});
+
 watch(
   () => props.src,
   (src) => {
     if (src) initPlayer(src);
-  },
-  { immediate: true }
+  }
 );
 
 onUnmounted(cleanup);
 
-// Expose video element for parent
 defineExpose({ videoEl });
 </script>
 
@@ -99,5 +101,7 @@ defineExpose({ videoEl });
     :class="props.class"
     @play="emit('play')"
     @pause="emit('pause')"
-  />
+  >
+    <slot />
+  </video>
 </template>

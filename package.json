@@ -2,9 +2,12 @@
   "name": "react-video-player-workspace",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"pnpm --filter react-video-player build:watch\" \"pnpm --filter playground dev\"",
-    "build:pkg": "pnpm --filter react-video-player build",
-    "publish:pkg": "pnpm --filter react-video-player publish --access public"
+    "dev": "pnpm --filter playground dev",
+    "dev:vue": "pnpm --filter playground-vue dev",
+    "build:pkg": "pnpm --filter @glitchlab/react-video-player build",
+    "build:pkg:vue": "pnpm --filter @glitchlab/vue-video-player build",
+    "publish:pkg": "pnpm --filter @glitchlab/react-video-player publish --access public",
+    "publish:pkg:vue": "pnpm --filter @glitchlab/vue-video-player publish --access public"
   },
   "devDependencies": {
     "clsx": "^2.1.1",
